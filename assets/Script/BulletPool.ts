@@ -13,7 +13,6 @@ export default class BulletPool extends cc.Component {
   }
 
   static put(bullet: cc.Node) {
-      console.log(this._bulletPool,bullet)
     this._bulletPool && this._bulletPool.put(bullet);
   }
 

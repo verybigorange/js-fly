@@ -3,7 +3,7 @@ import BulletPool from "BulletPool";
 
 @ccclass
 export default class Bullet extends cc.Component {
-  private _speed: number = 8;
+  private _speed: number = 12;
   private _isInit: boolean = false;
   private _x: number = null;
 
