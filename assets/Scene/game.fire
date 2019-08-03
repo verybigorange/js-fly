@@ -79,6 +79,9 @@
       },
       {
         "__id__": 9
+      },
+      {
+        "__id__": 10
       }
     ],
     "_prefab": null,
@@ -318,9 +321,7 @@
       "__id__": 5
     },
     "_enabled": true,
-    "bullet1": {
-      "__uuid__": "f8407181-5f64-4c29-b5f9-edabbd4ad4e7"
-    },
+    "_isUp": false,
     "_id": "fbYDVhP+lMBLSqthR8JMsa"
   },
   {
@@ -349,5 +350,18 @@
     },
     "_enabled": true,
     "_id": "1cbQstk55Adqc3SqdU04YG"
+  },
+  {
+    "__type__": "93d4e4sS9xPzravvbkIUSVq",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "myBullet": {
+      "__uuid__": "f8407181-5f64-4c29-b5f9-edabbd4ad4e7"
+    },
+    "_id": "c7w+CIbKlGjoop3HTCXy8h"
   }
 ]

@@ -1,10 +1,9 @@
 const { ccclass, property } = cc._decorator;
-import BulletPool from "BulletPool";
+import Pools from "./Pools";
 
 @ccclass
 export default class Player extends cc.Component {
   @property(cc.Prefab)
-  bullet1: cc.Prefab = null;
 
   private _isUp: boolean = false;
   private _isDown: boolean = false;
@@ -15,14 +14,13 @@ export default class Player extends cc.Component {
   // LIFE-CYCLE CALLBACKS:
   onLoad() {
     this._eventInit();
-    BulletPool.init(this.bullet1);
   }
 
   start() {}
 
   // 射击
   private _shoot() {
-    const bullet = BulletPool.get();
+    const bullet = Pools.MyBulletPool.get();
     if (!cc.isValid(bullet)) return;
 
     const position = this.node.getPosition();
@@ -32,7 +30,7 @@ export default class Player extends cc.Component {
     bullet.setPosition(position);
     bullet.parent = cc.director.getScene().getChildByName("Canvas");
 
-    const script = bullet.getComponent("bullet");
+    const script = bullet.getComponent("MyBullet");
     cc.isValid(script) && script.init();
   }
 

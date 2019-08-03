@@ -1,8 +1,8 @@
 const { ccclass, property } = cc._decorator;
-import BulletPool from "BulletPool";
+import Pools from "./Pools";
 
 @ccclass
-export default class Bullet extends cc.Component {
+export default class MyBullet extends cc.Component {
   private _speed: number = 12;
   private _isInit: boolean = false;
   private _x: number = null;
@@ -20,7 +20,7 @@ export default class Bullet extends cc.Component {
     if (this.node.y >= cc.winSize.height / 2 + this.node.height / 2) {
       this._isInit = false;
       // 对象池回收节点
-      BulletPool.put(this.node);
+      Pools.MyBulletPool.put(this.node);
       return;
     }
     this.node.y += this._speed;
