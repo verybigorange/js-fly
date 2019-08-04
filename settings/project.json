@@ -32,7 +32,7 @@
   "fit-width": false,
   "group-list": [
     "default",
-    "bullet",
+    "mybullet",
     "enemy"
   ],
   "last-module-event-record-time": 0,

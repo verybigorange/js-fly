@@ -6,9 +6,14 @@ const { ccclass, property } = cc._decorator;
 export default class Pools extends cc.Component {
     @property(cc.Prefab)
     myBullet:cc.Prefab = null
+    @property(cc.Prefab)
+    enemy:cc.Prefab = null
 
     // 我的子弹对象池
     static MyBulletPool = null
+   
+    // 敌人对象池
+    static EnemyPool = null
 
     onLoad(){
        this._init();
@@ -17,8 +22,9 @@ export default class Pools extends cc.Component {
     private _init(){
         Pools.MyBulletPool = new ObjectPool();
         Pools.MyBulletPool.init(this.myBullet);
+
+        Pools.EnemyPool = new ObjectPool();
+        Pools.EnemyPool.init(this.enemy);
     }
 
 }
-
-
