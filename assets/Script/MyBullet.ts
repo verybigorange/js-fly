@@ -51,13 +51,9 @@ export default class MyBullet extends cc.Component {
     animation.on("finished", () => {
       // 爆炸后，还原子弹并回收
       bulletNode.getComponent(cc.Sprite).spriteFrame = MyBulletScript.frame;
-      bulletNode.setScale(0.2);
       Pools.MyBulletPool.put(bulletNode);
     });
-    animation.on("play", () => {
-      // 增大爆炸效果
-      bulletNode.setScale(0.8);
-    })
+    
     // 播放子弹集中动画
     animation.play();
   }
